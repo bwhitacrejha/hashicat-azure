@@ -96,6 +96,10 @@ resource "azurerm_virtual_machine" "catapp" {
     sku       = var.image_sku
     version   = var.image_version
   }
+  
+  tags = {  
+    environment = "production"
+  }
 
   storage_os_disk {
     name              = "${var.prefix}-osdisk"
